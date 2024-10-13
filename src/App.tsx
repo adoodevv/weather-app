@@ -8,6 +8,12 @@ interface WeatherData {
   name: string;
   main: {
     temp: number;
+    humidity: number;
+    feels_like: number;
+    pressure: number;
+  };
+  wind: {
+    speed: number;
   };
   weather: {
     description: string;
@@ -40,8 +46,8 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-400 to-purple-500 p-4 sm:p-6 lg:p-8">
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">Weather App</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 p-4 sm:p-6 lg:p-8">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">Weather Search</h1>
       <SearchBar city={city} setCity={setCity} getWeather={getWeather} />
       <LoadingMessage loading={loading} />
       {error && <p className="text-red-500 sm:text-lg lg:text-xl">{error}</p>}
